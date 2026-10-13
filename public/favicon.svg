@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rdBlueMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E68C8" />
+      <stop offset="35%" stop-color="#0A4D92" />
+      <stop offset="70%" stop-color="#042B5E" />
+      <stop offset="100%" stop-color="#0D58A8" />
+    </linearGradient>
+    <linearGradient id="rdBlueBevel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4DA3FF" />
+      <stop offset="50%" stop-color="#0B55A5" />
+      <stop offset="100%" stop-color="#031D42" />
+    </linearGradient>
+    <linearGradient id="rdSilverMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="30%" stop-color="#CBD5E1" />
+      <stop offset="65%" stop-color="#94A3B8" />
+      <stop offset="85%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+    <linearGradient id="rdSilverEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#94A3B8" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+    <linearGradient id="rdGunmetal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#64748B" />
+      <stop offset="45%" stop-color="#334155" />
+      <stop offset="55%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <filter id="rdShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.22" />
+    </filter>
+    <filter id="rdTextShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.25" />
+    </filter>
+    <radialGradient id="blueGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#0A4D92" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="800" height="800" fill="#FFFFFF" />
+  <g filter="url(#rdShadow)">
+    <g>
+      <polygon points="384,405 408,382 408,468 384,468" fill="#1E293B" />
+      <polygon points="408,382 418,388 418,468 408,468" fill="#cbd5e1" />
+      <line x1="390" y1="408" x2="390" y2="462" stroke="#94A3B8" stroke-width="2" />
+      <line x1="396" y1="402" x2="396" y2="462" stroke="#94A3B8" stroke-width="2" />
+      <line x1="402" y1="396" x2="402" y2="462" stroke="#94A3B8" stroke-width="2" />
+      <polygon points="412,324 436,302 436,468 412,468" fill="url(#rdBlueMain)" />
+      <polygon points="436,302 458,318 458,468 436,468" fill="url(#rdSilverMain)" />
+      <line x1="420" y1="330" x2="420" y2="460" stroke="#60A5FA" stroke-width="2.5" />
+      <line x1="428" y1="320" x2="428" y2="460" stroke="#93C5FD" stroke-width="2.5" />
+      <rect x="442" y="324" width="5" height="138" fill="#1E293B" />
+      <rect x="450" y="332" width="4" height="130" fill="#334155" />
+      <polygon points="462,365 476,352 476,468 462,468" fill="url(#rdBlueBevel)" />
+      <polygon points="476,352 490,364 490,468 476,468" fill="#042B5E" />
+      <line x1="469" y1="366" x2="469" y2="460" stroke="#60A5FA" stroke-width="2" />
+      <line x1="482" y1="366" x2="482" y2="460" stroke="#1E68C8" stroke-width="2" />
+      <polygon points="490,398 504,408 504,468 490,468" fill="url(#rdSilverMain)" />
+      <polygon points="494,412 501,417 501,422 494,417" fill="#1E293B" />
+      <polygon points="494,424 501,429 501,434 494,429" fill="#1E293B" />
+      <polygon points="494,436 501,441 501,446 494,441" fill="#1E293B" />
+    </g>
+    <g>
+      <polygon
+        points="404,214 247,316 247,462 290,486 290,342 365,293 365,332 304,372 304,414 366,472 436,469 354,392 404,358"
+        fill="url(#rdBlueMain)"
+        stroke="url(#rdBlueBevel)"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <polygon points="404,214 392,232 260,318 247,316" fill="#60A5FA" opacity="0.65" />
+      <polygon points="247,316 260,322 260,455 247,462" fill="#031D42" />
+      <polygon points="354,392 368,392 436,469 418,469" fill="#60A5FA" opacity="0.7" />
+      <circle cx="352" cy="300" r="18" fill="url(#blueGlow)" />
+      <circle cx="288" cy="400" r="22" fill="url(#blueGlow)" />
+    </g>
+    <g>
+      <polygon
+        points="412,214 565,316 565,445 512,482 472,462 522,426 522,342 412,268"
+        fill="url(#rdSilverMain)"
+        stroke="url(#rdSilverEdge)"
+        stroke-width="2.5"
+        stroke-linejoin="round"
+      />
+      <polygon points="412,214 422,222 422,264 412,268" fill="#64748B" />
+      <polygon points="522,342 512,348 512,420 522,426" fill="#475569" />
+    </g>
+    <g>
+      <path d="M 255,498 Q 410,442 562,494 Q 410,458 255,498 Z" fill="url(#rdSilverMain)" />
+      <path d="M 248,504 Q 410,454 574,502 Q 410,476 248,504 Z" fill="url(#rdBlueMain)" />
+      <ellipse cx="408" cy="482" rx="45" ry="6" fill="url(#blueGlow)" />
+    </g>
+  </g>
+  <g filter="url(#rdTextShadow)">
+    <text
+      x="82"
+      y="602"
+      font-family="'Poppins', 'Montserrat', 'Arial Black', sans-serif"
+      font-weight="900"
+      font-size="112"
+      letter-spacing="2"
+      fill="url(#rdBlueMain)"
+      stroke="#042B5E"
+      stroke-width="2"
+    >
+      RD
+    </text>
+    <rect x="318" y="522" width="5" height="84" rx="2" fill="url(#rdSilverMain)" stroke="#475569" stroke-width="1" />
+    <text
+      x="338"
+      y="602"
+      font-family="'Poppins', 'Montserrat', 'Arial Black', sans-serif"
+      font-weight="800"
+      font-size="108"
+      letter-spacing="3"
+      fill="url(#rdGunmetal)"
+      stroke="#0F172A"
+      stroke-width="1.5"
+    >
+      INFRA
+    </text>
+  </g>
+  <g>
+    <polygon points="82,630 185,627 185,633" fill="url(#rdBlueMain)" />
+    <text
+      x="400"
+      y="635"
+      text-anchor="middle"
+      font-family="'Inter', 'Poppins', 'Segoe UI', sans-serif"
+      font-weight="600"
+      font-size="18.5"
+      letter-spacing="6.5"
+      fill="#0F294A"
+    >
+      BUILDING BETTER TOMORROWS
+    </text>
+    <polygon points="615,627 718,630 615,633" fill="url(#rdBlueMain)" />
+  </g>
+</svg>

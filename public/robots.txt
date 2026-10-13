@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/admin/
+
+# Sitemaps
+Sitemap: https://rd-infra.in/sitemap.xml
+Host: https://rd-infra.in
