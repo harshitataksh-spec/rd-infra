@@ -104,25 +104,31 @@ async function startServer() {
   });
 
   app.get('/robots.txt', (_req, res) => {
+    const domain = siteSettingsTable.domain.includes('.')
+      ? siteSettingsTable.domain
+      : `${siteSettingsTable.domain}.in`;
     res
       .type('text/plain')
       .send(
-        `User-agent: *\nAllow: /\nDisallow: /api/admin/\n\nSitemap: https://${siteSettingsTable.domain}/sitemap.xml\nHost: https://${siteSettingsTable.domain}\n`
+        `User-agent: *\nAllow: /\nDisallow: /api/admin/\n\nSitemap: https://${domain}/sitemap.xml\nHost: https://${domain}\n`
       );
   });
 
   app.get('/sitemap.xml', (_req, res) => {
+    const domain = siteSettingsTable.domain.includes('.')
+      ? siteSettingsTable.domain
+      : `${siteSettingsTable.domain}.in`;
     const today = new Date().toISOString().split('T')[0];
-    const sections = ['', '#about', '#projects', '#upcoming', '#corridors', '#testimonials', '#contact'];
+    const sections = ['', '#director', '#projects', '#upcoming', '#corridors', '#faqs', '#testimonials', '#contact'];
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sections
   .map(
     (s, i) => `  <url>
-    <loc>https://${siteSettingsTable.domain}/${s}</loc>
+    <loc>https://${domain}/${s}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>${i === 0 ? '1.0' : '0.85'}</priority>
+    <priority>${i === 0 ? '1.0' : '0.88'}</priority>
   </url>`
   )
   .join('\n')}

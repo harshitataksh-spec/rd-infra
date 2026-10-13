@@ -1,39 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://rd-infra.in/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://rd-infra.in/director-portrait.jpg</image:loc>
+      <image:title>Mr. Ravinder Deshwal - Founder and Director of RD INFRA</image:title>
+      <image:caption>RD INFRA Executive Director Mr. Ravinder Deshwal</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rd-infra.in/rd-infra-logo.svg</image:loc>
+      <image:title>RD INFRA Official Logo</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://rd-infra.in/#director</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://rd-infra.in/director-portrait.jpg</image:loc>
+      <image:title>Meet Our Director - Mr. Ravinder Deshwal</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://rd-infra.in/#portfolio</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://rd-infra.in/#projects</loc>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://rd-infra.in/#transactions</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://rd-infra.in/#upcoming</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://rd-infra.in/#corridors</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://rd-infra.in/#faqs</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://rd-infra.in/#testimonials</loc>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://rd-infra.in/#investment</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://rd-infra.in/#contact</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
 </urlset>

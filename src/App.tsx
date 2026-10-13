@@ -26,6 +26,11 @@ import {
   Eye,
   Award,
   HeartHandshake,
+  Search,
+  ChevronDown,
+  ChevronUp,
+  HelpCircle,
+  Sparkles,
 } from 'lucide-react';
 import {
   ProjectRecord,
@@ -49,6 +54,30 @@ import { AdminPortalModal } from './components/AdminPortalModal';
 import { XamppArchitectureModal } from './components/XamppArchitectureModal';
 import { LegalModal } from './components/LegalModal';
 import { AIAgentWidget } from './components/AIAgentWidget';
+import { GoogleSeoModal } from './components/GoogleSeoModal';
+
+const FAQ_ITEMS = [
+  {
+    q: 'What is the official website of RD INFRA?',
+    a: 'The official website of RD INFRA is https://rd-infra.in/ (rd-infra). You can browse our active portfolio of luxury farmhouses, residential and commercial projects, land investments, and consult directly with our advisory team.',
+  },
+  {
+    q: 'Who is the Founder & Director of RD INFRA?',
+    a: 'Mr. Ravinder Deshwal is the Founder & Director of RD INFRA. With over 12 years of experience in the real estate industry and 2 years in the Dubai market, he has personally guided 900+ families and investors across Gurugram, Delhi-NCR, Dharuhera, Karnal, and emerging growth corridors.',
+  },
+  {
+    q: 'What types of real estate projects does RD INFRA specialize in?',
+    a: 'RD INFRA specializes in luxury Aravalli farmhouses, strategic land investments, residential plots and apartments, high-yield commercial suites, and planned plotted developments along major expressways.',
+  },
+  {
+    q: 'Which growth corridors and regions does RD INFRA operate in?',
+    a: 'RD INFRA operates across North India’s fastest-growing corridors including Gurugram (Golf Course Extn, Dwarka Expressway, Sohna Rd), NH-48 Delhi–Jaipur Highway, Sohna Western Peripheral Corridor, Delhi–Mumbai Expressway, Dharuhera, Karnal, Rohtak, Rewari, Jind, Vrindavan, and Dubai.',
+  },
+  {
+    q: 'How can I contact RD INFRA for verified property consultation?',
+    a: 'You can reach RD INFRA via our Official Phone / WhatsApp at +91 97170 77699, Official Email ID at rdinfra.98@gmail.com, or through the direct consultation form on rd-infra.in.',
+  },
+];
 
 const PROJECT_CATEGORIES: ('All' | ProjectCategory)[] = [
   'All',
@@ -75,6 +104,8 @@ export default function App() {
   const [selectedProjectModal, setSelectedProjectModal] = useState<ProjectRecord | null>(null);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [isXamppModalOpen, setIsXamppModalOpen] = useState(false);
+  const [isSeoModalOpen, setIsSeoModalOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [activeLegalDoc, setActiveLegalDoc] = useState<'privacy' | 'terms' | 'disclaimer' | null>(
     null
   );
@@ -253,6 +284,16 @@ export default function App() {
 
             <button
               type="button"
+              onClick={() => setIsSeoModalOpen(true)}
+              className="hover:text-white flex items-center gap-1 text-amber-300 font-semibold whitespace-nowrap cursor-pointer"
+              title="Google First Page (#1 Ranking) SEO & Search Console Hub"
+            >
+              <Search className="w-3.5 h-3.5" />
+              <span>Google 1st Page SEO</span>
+            </button>
+
+            <button
+              type="button"
               onClick={() => setIsXamppModalOpen(true)}
               className="hover:text-white flex items-center gap-1 text-slate-300 whitespace-nowrap cursor-pointer"
               title="XAMPP, PHP & MySQL (rd_infra) Setup Guide"
@@ -325,6 +366,12 @@ export default function App() {
             >
               Testimonials
             </a>
+            <a
+              href="#faqs"
+              className="hover:text-[#0A4D92] transition-colors whitespace-nowrap shrink-0"
+            >
+              FAQs
+            </a>
           </nav>
 
           {/* Zone 3: Primary CTA Button + Mobile Hamburger Button */}
@@ -357,6 +404,7 @@ export default function App() {
               { href: '#upcoming', label: 'Upcoming Projects' },
               { href: '#corridors', label: 'Investment Corridors' },
               { href: '#testimonials', label: 'Testimonials' },
+              { href: '#faqs', label: 'Frequently Asked Questions (FAQ)' },
               { href: '#contact', label: 'Contact RD INFRA' },
             ].map((item) => (
               <a
@@ -395,6 +443,9 @@ export default function App() {
               </div>
 
               <h1 className="font-heading font-bold text-3xl sm:text-5xl lg:text-[54px] leading-[1.12] tracking-tight text-white">
+                <span className="block text-blue-300 text-base sm:text-xl font-semibold tracking-normal mb-2">
+                  RD INFRA Official Website · Real Estate Advisory & Investments
+                </span>
                 {settings.hero_headline}
               </h1>
 
@@ -1054,7 +1105,92 @@ export default function App() {
         </div>
       </section>
 
-      {/* 10. CONTACT PAGE & ENQUIRY SECTION */}
+      {/* 07. FREQUENTLY ASKED QUESTIONS (FAQ) & GOOGLE PAGE 1 RICH SNIPPETS */}
+      <section id="faqs" className="py-20 bg-white border-b border-slate-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="max-w-2xl space-y-2">
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0A4D92] tracking-wider uppercase">
+              <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+              07. FREQUENTLY ASKED QUESTIONS
+            </div>
+            <h2 className="font-heading font-bold text-2xl sm:text-3xl text-[#1E293B]">
+              Frequently Asked Questions About RD INFRA
+            </h2>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Find quick answers regarding our official website, leadership by Mr. Ravinder Deshwal,
+              investment corridors, and advisory services.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            {FAQ_ITEMS.map((item, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className={`rounded-2xl border transition-all overflow-hidden ${
+                    isOpen
+                      ? 'border-[#0A4D92] bg-blue-50/20 shadow-xs'
+                      : 'border-slate-200 bg-[#F8FAFC] hover:border-slate-300'
+                  }`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="w-full text-left p-5 flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="font-heading font-bold text-base text-slate-900 flex items-center gap-2.5">
+                      <HelpCircle
+                        className={`w-4 h-4 shrink-0 ${
+                          isOpen ? 'text-[#0A4D92]' : 'text-slate-400'
+                        }`}
+                      />
+                      {item.q}
+                    </span>
+                    <span
+                      className={`p-1 rounded-full ${
+                        isOpen ? 'bg-[#0A4D92] text-white' : 'bg-slate-200 text-slate-600'
+                      }`}
+                    >
+                      {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                    </span>
+                  </button>
+
+                  {isOpen && (
+                    <div className="px-5 pb-5 pt-1 text-sm text-slate-700 leading-relaxed border-t border-slate-200/60 font-sans">
+                      {item.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Google First Page Info Banner */}
+          <div className="p-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="space-y-0.5">
+              <div className="text-xs font-bold text-[#0A4D92] flex items-center gap-1.5">
+                <ShieldCheck className="w-4 h-4 text-[#0A4D92]" />
+                Google Rich Snippets & Verified Official Information
+              </div>
+              <p className="text-xs text-slate-600">
+                All answers are verified and mapped to Schema.org JSON-LD structured data for Google search indexing.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setIsSeoModalOpen(true)}
+              className="px-3.5 py-1.5 rounded-lg bg-[#0A4D92] hover:bg-[#083D75] text-white text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer flex items-center gap-1.5 shrink-0"
+            >
+              <Search className="w-3.5 h-3.5" />
+              View SEO & Ranking Audit
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* 08. CONTACT PAGE & ENQUIRY SECTION */}
       <section id="contact" className="py-20 bg-[#FFFFFF] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
@@ -1062,7 +1198,7 @@ export default function App() {
             <div className="lg:col-span-5 flex flex-col justify-between space-y-6 bg-[#F8FAFC] p-6 sm:p-8 rounded-2xl border border-slate-200">
               <div className="space-y-5">
                 <div className="text-xs font-semibold text-[#0A4D92] tracking-wider uppercase">
-                  07. CONTACT RD INFRA
+                  08. CONTACT RD INFRA
                 </div>
                 <h2 className="font-heading font-bold text-2xl sm:text-3xl text-[#1E293B]">
                   Talk to Our Team & Schedule a Consultation
@@ -1364,6 +1500,11 @@ export default function App() {
                   </a>
                 </li>
                 <li>
+                  <a href="#faqs" className="hover:text-white">
+                    FAQs
+                  </a>
+                </li>
+                <li>
                   <a href="#contact" className="hover:text-white">
                     Contact
                   </a>
@@ -1418,6 +1559,14 @@ export default function App() {
                   className="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs cursor-pointer"
                 >
                   XAMPP & MySQL Setup
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setIsSeoModalOpen(true)}
+                  className="px-3 py-1.5 rounded bg-blue-900 hover:bg-blue-800 text-blue-100 border border-blue-700 text-xs cursor-pointer flex items-center gap-1.5"
+                >
+                  <Search className="w-3.5 h-3.5 text-amber-300" />
+                  Google 1st Page SEO Guide
                 </button>
               </div>
             </div>
@@ -1494,6 +1643,12 @@ export default function App() {
           if (updated.testimonials) setTestimonials(updated.testimonials);
           if (updated.settings) setSettings(updated.settings);
         }}
+      />
+
+      <GoogleSeoModal
+        isOpen={isSeoModalOpen}
+        onClose={() => setIsSeoModalOpen(false)}
+        settings={settings}
       />
 
       <XamppArchitectureModal
